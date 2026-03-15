@@ -12,7 +12,7 @@ def generate_launch_description():
         description='Use fake hardware'
     )
 
-    moveit_config = MoveItConfigsBuilder("so_100_arm", package_name="so_100_arm").to_moveit_configs()
+    moveit_config = MoveItConfigsBuilder("so_arm_100", package_name="so_arm_100_moveit_config").to_moveit_configs()
     # Add the use_fake_hardware parameter
     moveit_config.robot_description = {
         "use_fake_hardware": LaunchConfiguration('use_fake_hardware')

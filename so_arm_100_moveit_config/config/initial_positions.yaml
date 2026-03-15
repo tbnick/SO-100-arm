@@ -1,4 +1,4 @@
-# Default initial positions for so_100_arm's ros2_control fake system
+# Default initial positions for so_arm_100's ros2_control fake system
 
 initial_positions:
   Elbow: 0
