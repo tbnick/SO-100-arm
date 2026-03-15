@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>so_100_arm</name>
+  <name>so_arm_100_moveit_config</name>
   <version>0.3.0</version>
   <description>
      This package provides ROS2 support for the SO-100 robot arm, available in 5-DOF configuration. generated package with all the configuration and launch files for using the so_100_arm with the MoveIt Motion Planning Framework
   </description>
   <maintainer email="bruk@signalbotics.com">Bruk Gebregziabher</maintainer>
 
-  <license>Apache</license>
+  <license>Apache 2.0</license>
 
   <url type="website">http://moveit.ros.org/</url>
   <url type="bugtracker">https://github.com/moveit/moveit2/issues</url>
