@@ -6,7 +6,7 @@ Panels:
       Expanded:
         - /MotionPlanning1
       Splitter Ratio: 0.5
-    Tree Height: 358
+    Tree Height: 384
   - Class: rviz_common/Help
     Name: Help
   - Class: rviz_common/Views
@@ -200,11 +200,175 @@ Visualization Manager:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-        Robot Alpha: 0.5
+        Robot Alpha: 1
         Show Robot Collision: false
         Show Robot Visual: true
       Value: true
       Velocity_Scaling_Factor: 0.1
+    - Class: moveit_rviz_plugin/Trajectory
+      Color Enabled: false
+      Enabled: false
+      Interrupt Display: false
+      Links:
+        All Links Enabled: true
+        Base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        End_Effector:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Fixed_Gripper:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Link Tree Style: Links in Alphabetic Order
+        Lower_Arm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Moving_Jaw:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Shoulder_Rotation_Pitch:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Upper_Arm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        Wrist_Pitch_Roll:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+      Loop Animation: false
+      Name: Trajectory
+      Robot Alpha: 0.5
+      Robot Color: 150; 50; 150
+      Robot Description: robot_description
+      Show Robot Collision: false
+      Show Robot Visual: true
+      Show Trail: false
+      State Display Time: 3x
+      Trail Step Size: 1
+      Trajectory Topic: /display_planned_path
+      Use Sim Time: false
+      Value: false
+    - Class: moveit_rviz_plugin/PlanningScene
+      Enabled: false
+      Move Group Namespace: ""
+      Name: PlanningScene
+      Planning Scene Topic: /monitored_planning_scene
+      Robot Description: robot_description
+      Scene Geometry:
+        Scene Alpha: 0.8999999761581421
+        Scene Color: 50; 230; 50
+        Scene Display Time: 0.009999999776482582
+        Show Scene Geometry: true
+        Voxel Coloring: Z-Axis
+        Voxel Rendering: Occupied Voxels
+      Scene Robot:
+        Attached Body Color: 150; 50; 150
+        Links:
+          All Links Enabled: true
+          Base:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          End_Effector:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          Fixed_Gripper:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          Link Tree Style: Links in Alphabetic Order
+          Lower_Arm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          Moving_Jaw:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          Shoulder_Rotation_Pitch:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          Upper_Arm:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          Wrist_Pitch_Roll:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          base_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+        Robot Alpha: 1
+        Show Robot Collision: false
+        Show Robot Visual: true
+      Value: false
+    - Class: rviz_default_plugins/Image
+      Enabled: false
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /camera1/image_raw
+      Value: false
+    - Class: rviz_default_plugins/Image
+      Enabled: false
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: Image
+      Normalize Range: true
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /camera2/image_raw
+      Value: false
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -223,41 +387,45 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 1.03270423412323
+      Distance: 1.1492207050323486
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.09150025993585587
-        Y: -0.029172547161579132
-        Z: 0.016728386282920837
+        X: -0.0035856824833899736
+        Y: -0.12853914499282837
+        Z: 0.09823287278413773
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.39000001549720764
+      Pitch: 0.7797982096672058
       Target Frame: base_link
       Value: Orbit (rviz_default_plugins)
-      Yaw: 5.190184116363525
+      Yaw: 4.996955394744873
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 986
+  Height: 1011
   Help:
     collapsed: false
   Hide Left Dock: false
   Hide Right Dock: true
+  Image:
+    collapsed: false
   MotionPlanning:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000002000000000000027500000393fc0200000004fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001800000018fb000000100044006900730070006c006100790073010000002c000001ff000000e300fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000022c000001930000018700fffffffb0000000800480065006c0070000000029a0000006e0000007a00ffffff00000001000001a300000388fc0200000001fb0000000a00560069006500770073000000002c00000388000000c600ffffff000003170000039300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd0000000200000000000002b4000003acfc0200000008fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001800000018fb000000100044006900730070006c006100790073010000002c00000219000000e300fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e00670100000246000001920000018700fffffffb0000000800480065006c0070000000029a0000006e0000007a00fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000000000000000fb0000003c005400720061006a006500630074006f007200790020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff0000001800000018fb0000000a0049006d00610067006502000005cd00000344000000f3000000d4fb0000000a0049006d00610067006502000002cb0000035c000000f7000000be00000001000001a3000003acfc0200000001fb0000000a00560069006500770073000000002c000003ac000000c600ffffff0000040b000003ac00000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Trajectory - Trajectory Slider:
+    collapsed: false
   Views:
     collapsed: true
-  Width: 1421
-  X: 299
-  Y: 52
+  Width: 1728
+  X: 0
+  Y: 38

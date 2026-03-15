@@ -5,10 +5,8 @@ find_package(ament_cmake REQUIRED)
 
 install(
   DIRECTORY 
-    models
-    urdf
-    launch
     config
+    launch
   DESTINATION share/${PROJECT_NAME}
   PATTERN "setup_assistant.launch" EXCLUDE)
 install(FILES .setup_assistant DESTINATION share/${PROJECT_NAME})

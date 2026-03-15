@@ -1,13 +1,14 @@
 controller_manager:
   ros__parameters:
-    update_rate: 1000
+    update_rate: 100  # Hz
+
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
     
-    joint_trajectory_controller:
+    arm_controller:
       type: joint_trajectory_controller/JointTrajectoryController
     
-joint_trajectory_controller:
+arm_controller:
   ros__parameters:
     type: joint_trajectory_controller/JointTrajectoryController
     joints:
@@ -18,7 +19,6 @@ joint_trajectory_controller:
       - Wrist_Roll
       - Wrist_Pitch
       - Wrist_Yaw
-    
     interface_name: position
     command_interfaces:
       - position
