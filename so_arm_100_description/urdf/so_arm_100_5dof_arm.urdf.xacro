@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
-     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
-     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
-<robot
-  name="so_arm_100">
+<!--
+Modified from auto-generated original:
+- Add xacro macros and properties.
+- Add end effector
 
-
+This URDF was automatically created by SolidWorks to URDF Exporter!
+Originally created by Stephen Brawner (brawner@gmail.com) 
+Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+For more information, please see http://wiki.ros.org/sw_urdf_exporter
+-->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
   
-  <!-- <link name="world"/>
+  <xacro:macro name="so_arm_100_5dof" params="prefix=''">
 
-  <joint name="world_to_base" type="fixed">
-    <parent link="world"/>
-    <child link="base_link"/>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-  </joint> -->
+  <xacro:property
+    name="meshes_file_directory"
+    value="package://so_arm_100_description/models/so_arm_100_5dof/meshes"/>
 
-  <link 
-    name="base_link">
+  <link name="${prefix}base_link">
     <gazebo>
       <material>Gazebo/Grey</material>
     </gazebo>
   </link>
-
-  <joint name="base_link_joint" type="fixed">
-    <parent link="base_link"/>
-    <child link="Base"/>
+  <joint name="${prefix}base_link_joint" type="fixed">
+    <parent link="${prefix}base_link"/>
+    <child link="${prefix}Base"/>
     <origin xyz="0 0 0" rpy="0 0 0"/>
   </joint>
-  <link
-    name="Base">
+
+  <link name="${prefix}Base">
     <inertial>
       <origin
         xyz="-2.45960666746703E-07 0.0311418169687909 0.0175746661003382"
@@ -49,12 +49,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Base.STL" />
+          filename="${meshes_file_directory}/Base.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="brightyellow" >
+        <color rgba="1.0 0.9921568627450981 0.00392156862745098 1.0" />
       </material>
     </visual>
     <collision>
@@ -63,13 +61,12 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Base.STL" />
+          filename="${meshes_file_directory}/Base.STL" />
       </geometry>
     </collision>
   </link>
 
-  <link
-    name="Shoulder_Rotation_Pitch">
+  <link name="${prefix}Shoulder_Rotation_Pitch">
     <inertial>
       <origin
         xyz="-9.07886224712597E-05 0.0590971820568318 0.031089016892169"
@@ -90,12 +87,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Shoulder_Rotation_Pitch.STL" />
+          filename="${meshes_file_directory}/Shoulder_Rotation_Pitch.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="brightyellow" >
+        <color rgba="1.0 0.9921568627450981 0.00392156862745098 1.0" />
       </material>
     </visual>
     <collision>
@@ -104,25 +99,25 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Shoulder_Rotation_Pitch.STL" />
+          filename="${meshes_file_directory}/Shoulder_Rotation_Pitch.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Shoulder_Rotation"
-    type="continuous">
+  <joint name="${prefix}Shoulder_Rotation" type="revolute">
     <origin
       xyz="0 -0.0452 0.0165"
       rpy="1.5708 0 0" />
     <parent
-      link="Base" />
+      link="${prefix}Base" />
     <child
-      link="Shoulder_Rotation_Pitch" />
+      link="${prefix}Shoulder_Rotation_Pitch" />
     <axis
-      xyz="0 1 0" />
+      xyz="0 -1 0" />
+    <limit effort="1000" lower="-1.96" upper="1.96" velocity="5.0"/>
+    <dynamics damping="0.1"/>
   </joint>
-  <link
-    name="Upper_Arm">
+
+  <link name="${prefix}Upper_Arm">
     <inertial>
       <origin
         xyz="-1.7205170190925E-05 0.0701802156327694 0.00310545118155671"
@@ -143,12 +138,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Upper_Arm.STL" />
+          filename="${meshes_file_directory}/Upper_Arm.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="brightyellow" >
+        <color rgba="1.0 0.9921568627450981 0.00392156862745098 1.0" />
       </material>
     </visual>
     <collision>
@@ -157,25 +150,25 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Upper_Arm.STL" />
+          filename="${meshes_file_directory}/Upper_Arm.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Shoulder_Pitch"
-    type="continuous">
+  <joint name="${prefix}Shoulder_Pitch" type="revolute">
     <origin
       xyz="0 0.1025 0.0306"
       rpy="0 0 0" />
     <parent
-      link="Shoulder_Rotation_Pitch" />
+      link="${prefix}Shoulder_Rotation_Pitch" />
     <child
-      link="Upper_Arm" />
+      link="${prefix}Upper_Arm" />
     <axis
       xyz="1 0 0" />
+    <limit effort="1000" lower="-1.745" upper="1.745" velocity="5.0"/>
+    <dynamics damping="0.1"/>
   </joint>
-  <link
-    name="Lower_Arm">
+
+  <link name="${prefix}Lower_Arm">
     <inertial>
       <origin
         xyz="-0.00339603710186651 0.00137796353960074 0.0768006751156044"
@@ -196,12 +189,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Lower_Arm.STL" />
+          filename="${meshes_file_directory}/Lower_Arm.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="brightyellow" >
+        <color rgba="1.0 0.9921568627450981 0.00392156862745098 1.0" />
       </material>
     </visual>
     <collision>
@@ -210,25 +201,25 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Lower_Arm.STL" />
+          filename="${meshes_file_directory}/Lower_Arm.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Elbow"
-    type="continuous">
+  <joint name="${prefix}Elbow" type="revolute">
     <origin
       xyz="0 0.11257 0.028"
       rpy="0 0 0" />
     <parent
-      link="Upper_Arm" />
+      link="${prefix}Upper_Arm" />
     <child
-      link="Lower_Arm" />
+      link="${prefix}Lower_Arm" />
     <axis
       xyz="1 0 0" />
+    <limit effort="1000" lower="-1.5" upper="1.5" velocity="5.0"/>
+    <dynamics damping="0.1"/>
   </joint>
-  <link
-    name="Wrist_Pitch_Roll">
+
+  <link name="${prefix}Wrist_Pitch_Roll">
     <inertial>
       <origin
         xyz="-0.00852653127372418 -0.0352278997897927 -2.34622481569413E-05"
@@ -249,12 +240,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Wrist_Pitch_Roll.STL" />
+          filename="${meshes_file_directory}/Wrist_Pitch_Roll.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="brightyellow" >
+        <color rgba="1.0 0.9921568627450981 0.00392156862745098 1.0" />
       </material>
     </visual>
     <collision>
@@ -263,25 +252,25 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Wrist_Pitch_Roll.STL" />
+          filename="${meshes_file_directory}/Wrist_Pitch_Roll.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Wrist_Pitch"
-    type="continuous">
+  <joint name="${prefix}Wrist_Pitch" type="revolute">
     <origin
       xyz="0 0.0052 0.1349"
-      rpy="0 0 0" />
+      rpy="-1.57079 0 0" />
     <parent
-      link="Lower_Arm" />
+      link="${prefix}Lower_Arm" />
     <child
-      link="Wrist_Pitch_Roll" />
+      link="${prefix}Wrist_Pitch_Roll" />
     <axis
       xyz="1 0 0" />
+    <limit effort="1000" lower="-1.658" upper="1.658" velocity="5.0"/>
+    <dynamics damping="0.1"/>
   </joint>
-  <link
-    name="Fixed_Gripper">
+
+  <link name="${prefix}Fixed_Gripper">
     <inertial>
       <origin
         xyz="0.00552376906426563 -0.0280167153359021 0.000483582592841092"
@@ -302,12 +291,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Fixed_Gripper.STL" />
+          filename="${meshes_file_directory}/Fixed_Gripper.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="brightyellow" >
+        <color rgba="1.0 0.9921568627450981 0.00392156862745098 1.0" />
       </material>
     </visual>
     <collision>
@@ -316,25 +303,25 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Fixed_Gripper.STL" />
+          filename="${meshes_file_directory}/Fixed_Gripper.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Wrist_Roll"
-    type="continuous">
+  <joint name="${prefix}Wrist_Roll" type="revolute">
     <origin
       xyz="0 -0.0601 0"
-      rpy="0 0 0" />
+      rpy="0 1.57079 0" />
     <parent
-      link="Wrist_Pitch_Roll" />
+      link="${prefix}Wrist_Pitch_Roll" />
     <child
-      link="Fixed_Gripper" />
+      link="${prefix}Fixed_Gripper" />
     <axis
       xyz="0 1 0" />
+    <limit effort="1000" lower="-2.75" upper="2.75" velocity="5.0"/>
+    <dynamics damping="0.1"/>
   </joint>
-  <link
-    name="Moving_Jaw">
+
+  <link name="${prefix}Moving_Jaw">
     <inertial>
       <origin
         xyz="-0.00161744605468241 -0.0303472584046471 0.000449645961853651"
@@ -355,12 +342,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Moving_Jaw.STL" />
+          filename="${meshes_file_directory}/Moving_Jaw.STL" />
       </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      <material name="brightyellow" >
+        <color rgba="1.0 0.9921568627450981 0.00392156862745098 1.0" />
       </material>
     </visual>
     <collision>
@@ -369,21 +354,40 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://so_arm_100_moveit_config/models/so_arm_100_5dof/meshes/Moving_Jaw.STL" />
+          filename="${meshes_file_directory}/Moving_Jaw.STL" />
       </geometry>
     </collision>
   </link>
-  <joint
-    name="Gripper"
-    type="continuous">
+  <joint name="${prefix}Gripper" type="revolute">
     <origin
       xyz="-0.0202 -0.0244 0"
       rpy="3.1416 0 3.1416" />
     <parent
-      link="Fixed_Gripper" />
+      link="${prefix}Fixed_Gripper" />
     <child
-      link="Moving_Jaw" />
+      link="${prefix}Moving_Jaw" />
     <axis
       xyz="0 0 1" />
+    <limit effort="1000" lower="-0.1792" upper="1.5708" velocity="5.0"/>
+    <dynamics damping="0.1"/>
   </joint>
+
+  <link name="${prefix}End_Effector">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <box size="0.01 0.01 0.01" />
+      </geometry>
+      <material name="red">
+        <color rgba="1.0 0.0 0.0 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint name="${prefix}End_Effector_Joint" type="fixed">
+    <parent link="${prefix}Fixed_Gripper"/>
+    <child link="${prefix}End_Effector"/>
+    <origin xyz="0.0 -0.09 0.0" rpy="0 0 0"/>
+  </joint>
+
+  </xacro:macro>
 </robot>
