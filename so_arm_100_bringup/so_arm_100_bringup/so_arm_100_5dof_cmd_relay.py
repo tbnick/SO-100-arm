@@ -9,7 +9,6 @@ Subscriptions
 
 Publications
 - std_msgs.msg.Float64 on /{prefix}{joint_name}/cmd_pos
-- std_msgs.msg.Float64 on /{prefix}{joint_name}/cmd_vel
 """
 
 import math
