@@ -22,7 +22,8 @@ moveit_simple_controller_manager:
 
   gripper_controller:
     type: ParallelGripperCommand
-    joint: Gripper
+    joints:
+      - Gripper
     action_ns: gripper_cmd
     default: true
 
